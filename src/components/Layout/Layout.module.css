@@ -1,0 +1,36 @@
+.mainLayout {
+
+    flex-grow: 1;
+    display: grid;
+    place-content: center;
+    grid-template-columns: minmax(2rem, 1rem) min(calc(100% - 1rem), 100vw) minmax(2rem, 1rem);
+    grid-template-rows: min-content 1fr min-content;
+    grid-template-areas:
+      "hd-lf hd hd-rg"
+      ". mn ."
+      "ft-lf ft ft-rg";
+      
+  }
+  
+  .mainHeader { grid-area: hd; }
+  
+  .mainContent { 
+    grid-area: mn;
+   }
+
+
+  .mainFooter { grid-area: ft; }
+  
+  .headerRow, .footerRow { display: contents; }
+  .headerRow::after, .headerRow::before,
+  .footerRow::after, .footerRow::before {
+    content: "";
+    display: block;
+    background-color: #22224C;
+  }
+  
+  .headerRow::before { grid-area: hd-lf; }
+  .headerRow::after { grid-area: hd-rg; }
+  
+  .footerRow::before { grid-area: ft-lf; }
+  .footerRow::after { grid-area: ft-rg; }

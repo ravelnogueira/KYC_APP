@@ -1,0 +1,11 @@
+
+.header{
+    margin: 0;
+    min-width: 100vh;
+    height: 4rem;
+
+    display: flex;
+    align-items: center;
+    background-color: #22224C;
+
+}
