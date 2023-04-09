@@ -5,7 +5,7 @@ from selenium.webdriver.chrome.options import Options
 from time import sleep
 import os
 
-class Driver_MidiasNegativas:
+class DriverMidiasNegativas:
     def __init__(self,nome, cpf):
         self.service = Service(ChromeDriverManager().install())
         self.options = Options()
@@ -17,11 +17,11 @@ class Driver_MidiasNegativas:
         self.link = f'https://www.google.com'
 
 
-    def Run(self):
+    def run(self):
         self.ConsultaPalavras()
         self.ConsultarJus()
 
-    def ConsultaPalavras(self):
+    def consulta_palavras(self):
         self.nav.get(self.link)
         self.nome = self.nome.replace("+"," ")
 
@@ -51,7 +51,7 @@ class Driver_MidiasNegativas:
             self.nav.save_screenshot(f'src/asset/{self.cpf}/ConsultaKeyWords{i}.png')
 
 
-    def ConsultarJus(self):
+    def consultar_jus(self):
         self.nav.get(self.link)
         self.nome = self.nome.replace("+"," ")
         self.nav.find_element('xpath','/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/input').send_keys(f'site:jusbrasil.com.br "{ self.nome}"')

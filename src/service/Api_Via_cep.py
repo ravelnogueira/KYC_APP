@@ -17,7 +17,6 @@ class Buscar_Cep:
         response1 = response.json()
         self.bairro = response1["bairro"]
         self.logradouro = response1['logradouro']
-
         return response.json()
 
     def Validate(self, field):

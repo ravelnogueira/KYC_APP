@@ -5,7 +5,7 @@ from selenium.webdriver.chrome.options import Options
 from time import sleep
 import os
 
-class Driver_ConsultaCPF:
+class DriverConsultaCPF:
     def __init__(self,cpf):
         self.service = Service(ChromeDriverManager().install())
         self.options = Options()
@@ -15,7 +15,7 @@ class Driver_ConsultaCPF:
         self.cpf = cpf
         self.link = f'https://www.situacao-cadastral.com'
 
-    def Run(self):
+    def run(self):
         self.cpf = self.validate(self.cpf)
         arvore = os.getcwd()
 

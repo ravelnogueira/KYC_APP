@@ -5,7 +5,7 @@ from selenium.webdriver.chrome.options import Options
 from time import sleep
 import os
 
-class Driver_PortalTransparencia:
+class DriverPortalTransparencia:
     def __init__(self,cpf):
         self.service = Service(ChromeDriverManager().install())
         self.options = Options()
@@ -15,7 +15,7 @@ class Driver_PortalTransparencia:
         self.cpf = cpf
         self.link = f'https://portaldatransparencia.gov.br/busca?termo={self.cpf}'
 
-    def Run(self):
+    def run(self):
         self.nav.get(self.link)
         sleep(7)
         self.nav.save_screenshot('src/asset/PortalTransparencia.png')

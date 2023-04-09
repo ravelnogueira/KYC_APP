@@ -5,7 +5,7 @@ from selenium.webdriver.chrome.options import Options
 from time import sleep
 import os
 
-class Driver_Maps:
+class DriverMaps:
     def __init__(self,rua,numero,bairro):
         self.service = Service(ChromeDriverManager().install())
         self.options = Options()
@@ -17,10 +17,10 @@ class Driver_Maps:
         self.district = bairro
         self.CompleteAdress =  f'{self.street} {self.number} {self.district}'
 
-    def Run(self):
+    def run(self):
         self.Go_Maps()
 
-    def Go_Maps(self):
+    def go_maps(self):
 
         self.nav.get('https://www.google.com/maps')
         self.nav.find_element('xpath','//*[@id="searchboxinput"]').send_keys(self.CompleteAdress)
